@@ -13,7 +13,6 @@ pnpm run dev
 
 ![image description](demo.gif)
 
-test
 
 # How to deploy it
 ```
