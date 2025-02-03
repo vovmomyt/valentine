@@ -1,13 +1,8 @@
 # Will you be my valentine?
 
-Valentine Page Creator: https://i143.xyz/create
 
-Demo : https://saurabhnemade.github.io/will-you-be-my-valentine/
 
-This is a fun project for valentines day to bring smile on face of your special person!!
-
-This project is inspired from
-https://gist.github.com/tnarla/0c09a11fea366145ba684fe6ebf578c5 & https://www.tiktok.com/@mewtru/video/7331131143112166698
+Demo : https://vovmomyt.github.io/valentine/
 
 # How to start
 ```
@@ -24,6 +19,11 @@ pnpm run dev
 # How to deploy it
 ```
 pnpm run deploy
+```
+
+# How to deploy it with pushing
+```
+pnpm run push_deploy
 ```
 
 Made with ❤️ in Berlin!
