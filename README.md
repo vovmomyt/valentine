@@ -1,7 +1,5 @@
 # Will you be my valentine?
 
-
-
 Demo : https://vovmomyt.github.io/valentine/
 
 # How to start
@@ -25,5 +23,3 @@ pnpm run deploy
 ```
 pnpm run push_deploy
 ```
-
-Made with ❤️ in Berlin!
