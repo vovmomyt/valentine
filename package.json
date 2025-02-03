@@ -1,6 +1,6 @@
 {
-  "name": "will-you-be-my-valentine",
-  "homepage": "https://saurabhnemade.github.io/will-you-be-my-valentine",
+  "name": "valentine",
+  "homepage": "https://vovmomyt.github.io/valentine",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -9,7 +9,8 @@
     "build": "tsc && vite build",
     "deploy": "vite build && gh-pages -d dist",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "push_deploy": "git checkout main && git add * && git commit -m 'deploy' && git push origin main && vite build && gh-pages -d dist -b gh-pages && git checkout main && echo 'Pushed to main and deployed to gh-pages. Repo: https://github.com/vovmomyt/valentine'"
   },
   "dependencies": {
     "react": "^18.2.0",

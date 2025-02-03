@@ -49,7 +49,7 @@ export default function Page() {
       "Нет, это не вариант :)",
       "Я буду делать с тобой подарки для твоих тк",
       "Судьба свела нас не просто так",
-      "Я не "
+      "Я не смогу без тебя"
     ];
     
     return phrases[Math.min(noCount, phrases.length - 1)];
@@ -60,7 +60,7 @@ export default function Page() {
       {yesPressed ? (
         <>
           <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" />
-          <div className="my-4 text-4xl font-bold">УРААААА!!! Я люблю тебя, солнышко!! ;))</div>
+          <div className="my-4 text-4xl font-bold">УРААААА!!! Я люблю тебя, солнышко!!;))</div>
         </>
       ) : (
         <>
