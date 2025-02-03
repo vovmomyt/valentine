@@ -10,7 +10,7 @@
     "deploy": "vite build && gh-pages -d dist",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "push_deploy": "git checkout main && git add * && git commit -m 'deploy' && git push origin main && vite build && gh-pages -d dist -b gh-pages && git checkout main && echo 'Pushed to main and deployed to gh-pages. Repo: https://github.com/vovmomyt/valentine'"
+    "push_deploy": "git checkout main && git add * && git commit -m 'deploy' && git push origin main && vite build && gh-pages -d dist -b gh-pages && git checkout main && echo Pushed to main and deployed to gh-pages. Repo: https://github.com/vovmomyt/valentine | Deployed: https://vovmomyt.github.io/valentine"
   },
   "dependencies": {
     "react": "^18.2.0",
