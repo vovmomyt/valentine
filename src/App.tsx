@@ -88,6 +88,7 @@ export default function Page() {
       "И чай!",
       "Я подарю тебе весь мир",
       "Я сделаю тебя счастливее",
+      "Я буду чистить тебе мандаринки",
     ];
     
     return phrases[Math.min(noCount, phrases.length - 1)];
