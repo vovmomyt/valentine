@@ -41,3 +41,14 @@ jobs:
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
           pnpm vite build
           pnpm gh-pages -d dist -b gh-pages
+
+      - name: Send Telegram notification
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: |
+            🚀 Деплой Valentine App
+            Статус: ${{ job.status }}
+            Репозиторий: ${{ github.repository }}
+            Посмотреть: https://vovmomyt.github.io/valentine
