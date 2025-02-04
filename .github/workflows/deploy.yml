@@ -50,13 +50,12 @@ jobs:
           message: |
             🚀 Деплой Valentine App
             Статус: ${{ job.status }}
-            Ветка: ${{ github.ref }} || ${{ github.ref_name }} || https://github.com/${{ github.repository }}/tree/${{ github.ref_name }}
-            Ссылка на деплой: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-            Коммит: ${{ github.event.head_commit.message }} ||  ${{ github.event.head_commit.author }} || ${{ github.sha }}
-            Ссылка на коммит: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
-            Автор коммита: ${{ github.actor }}
-            Репозиторий: https://github.com/${{ github.repository }}
+            Ветка: <a href="https://github.com/${{ github.repository }}/tree/${{ github.ref_name }}">${{ github.ref_name }}</a>
+            Ссылка на деплой: <a href="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}">Открыть</a>
+            Коммит: <a href="https://github.com/${{ github.repository }}/commit/${{ github.sha }}">${{ github.event.head_commit.message }}</a>
+            Автор коммита: <a href="https://github.com/${{ github.actor }}">${{ github.actor }}</a>
+            Репозиторий: <a href="https://github.com/${{ github.repository }}">${{ github.repository }}</a>
             
             ${{ job.status != 'success' && '❌ Ошибка во время деплоя' || '✅ Деплой успешен!' }}
             
-            Посмотреть: https://vovmomyt.github.io/valentine
+            Посмотреть: <a href="https://vovmomyt.github.io/valentine">https://vovmomyt.github.io/valentine</a>
