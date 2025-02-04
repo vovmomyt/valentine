@@ -51,8 +51,9 @@ jobs:
             🚀 Деплой Valentine App
             Статус: ${{ job.status }}
             Коммит: ${{ github.event.head_commit.message }}
-            Автор: ${{ github.actor }}
-            Репозиторий: ${{ github.repository }}
+            Ссылка на коммит: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+            Автор коммита: ${{ github.actor }}
+            Репозиторий: https://github.com/${{ github.repository }}
             
             ${{ job.status != 'success' && '❌ Ошибка во время деплоя' || '✅ Деплой успешен!' }}
             
