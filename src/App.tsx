@@ -1,10 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Page() {
   const [noCount, setNoCount] = useState(0);
   const [yesPressed, setYesPressed] = useState(false);
   const [currentGifIndex, setCurrentGifIndex] = useState(0);
+  const [gifsLoaded, setGifsLoaded] = useState(false);
   const yesButtonSize = noCount * 20 + 16;
 
   const waitingGifs = [
@@ -17,8 +18,30 @@ export default function Page() {
     "https://media.tenor.com/PLQ-msOeeLUAAAAj/dudu-on-top-bubu-hearts.gif",
     "https://media.tenor.com/WC1PVy3eXeQAAAAj/dudu-playing-with-ball-happy.gif",
     "https://media.tenor.com/qKvWT2UBPCIAAAAM/peach-and-goma-temper-tantrum.gif",
-
   ];
+
+  useEffect(() => {
+    const preloadGifs = async () => {
+      const loadPromises = waitingGifs.map((gif) => {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.onload = () => resolve();
+          img.src = gif;
+        });
+      });
+
+      const successGif = new Image();
+      successGif.src = "https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif";
+      loadPromises.push(new Promise((resolve) => {
+        successGif.onload = () => resolve();
+      }));
+
+      await Promise.all(loadPromises);
+      setGifsLoaded(true);
+    };
+
+    preloadGifs();
+  }, []);
 
   const handleNoClick = () => {
     setNoCount(noCount + 1);
@@ -65,11 +88,14 @@ export default function Page() {
       "И чай!",
       "Я подарю тебе весь мир",
       "Я сделаю тебя счастливее",
-      
     ];
     
     return phrases[Math.min(noCount, phrases.length - 1)];
   };
+
+  if (!gifsLoaded) {
+    return <div className="flex h-screen items-center justify-center">Загрузка...</div>;
+  }
 
   return (
     <div className="-mt-16 flex h-screen flex-col items-center justify-center">
