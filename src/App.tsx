@@ -8,10 +8,16 @@ export default function Page() {
   const yesButtonSize = noCount * 20 + 16;
 
   const waitingGifs = [
+    "https://media.tenor.com/rPAM20SrLsAAAAAM/picoozi-cute-cat.gif",
     "https://media.tenor.com/mMdUSERZgGUAAAAM/kiss-love.gif",
     "https://media.tenor.com/UIOgr3Zw97sAAAAM/cute.gif",
     "https://media.tenor.com/J9mOaXMbKygAAAAM/mochi-pet.gif",
-    "https://media.tenor.com/D75xzWpkx30AAAAM/why-hello.gif"
+    "https://media.tenor.com/D75xzWpkx30AAAAM/why-hello.gif",
+    "https://media.tenor.com/aGiJKEun9CYAAAAj/wow-excited.gif",
+    "https://media.tenor.com/PLQ-msOeeLUAAAAj/dudu-on-top-bubu-hearts.gif",
+    "https://media.tenor.com/WC1PVy3eXeQAAAAj/dudu-playing-with-ball-happy.gif",
+    "https://media.tenor.com/qKvWT2UBPCIAAAAM/peach-and-goma-temper-tantrum.gif",
+
   ];
 
   const handleNoClick = () => {
@@ -51,6 +57,15 @@ export default function Page() {
       "Судьба свела нас не просто так",
       "Я не смогу без тебя",
       "Ты моё счастье",
+      "Обещаю много обнимашек",
+      "Ты разбиваешь моё сердечко",
+      "Я уже купил нам мороженое",
+      "Давай не будем торопиться с отказом",
+      "У меня есть печеньки!",
+      "И чай!",
+      "Я подарю тебе весь мир",
+      "Я сделаю тебя счастливее",
+      
     ];
     
     return phrases[Math.min(noCount, phrases.length - 1)];
