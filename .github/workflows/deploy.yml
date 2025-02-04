@@ -39,10 +39,10 @@ jobs:
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
-          pnpm vite build
-          pnpm gh-pages -d dist -b gh-pages
+          npx gh-pages -d dist -b gh-pages
 
       - name: Send Telegram notification
+        if: always()
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -50,5 +50,7 @@ jobs:
           message: |
             🚀 Деплой Valentine App
             Статус: ${{ job.status }}
+            Коммит: ${{ github.event.head_commit.message }}
+            Автор: ${{ github.actor }}
             Репозиторий: ${{ github.repository }}
             Посмотреть: https://vovmomyt.github.io/valentine
