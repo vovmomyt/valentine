@@ -1,4 +1,4 @@
-name: Deploy Valentine We
+name: Deploy Valentine Website
 
 on:
   push:
