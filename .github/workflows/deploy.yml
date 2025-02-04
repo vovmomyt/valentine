@@ -54,7 +54,6 @@ jobs:
             Автор: ${{ github.actor }}
             Репозиторий: ${{ github.repository }}
             
-            ${{ job.status != 'success' && format('❌ Ошибка в шаге: {0}
-            {1}', steps.deploy.outcome, steps.deploy.outputs.stderr) || '✅ Деплой успешен!' }}
+            ${{ job.status != 'success' && '❌ Ошибка во время деплоя' || '✅ Деплой успешен!' }}
             
             Посмотреть: https://vovmomyt.github.io/valentine
