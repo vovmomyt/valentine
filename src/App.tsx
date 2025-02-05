@@ -92,6 +92,7 @@ export default function Page() {
       "Я буду тебя утешать",
       "Я всегда буду любить тебя",
       "Ты моё счастье",
+      "Люблю тебя",
     ];
     
     return phrases[Math.min(noCount, phrases.length - 1)];
