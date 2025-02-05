@@ -10,8 +10,8 @@ export default function Page() {
   const yesButtonSize = noCount * 20 + 16;
 
   const waitingGifs = [
-    cutegif_01,
     "https://media.tenor.com/rPAM20SrLsAAAAAM/picoozi-cute-cat.gif",
+    cutegif_01,
     "https://media.tenor.com/mMdUSERZgGUAAAAM/kiss-love.gif",
     "https://media.tenor.com/UIOgr3Zw97sAAAAM/cute.gif",
     "https://media.tenor.com/J9mOaXMbKygAAAAM/mochi-pet.gif",
