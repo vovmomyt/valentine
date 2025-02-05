@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import cutegif_01 from "./assets/CUTEGIF_01.gif";
 
 export default function Page() {
   const [noCount, setNoCount] = useState(0);
@@ -9,6 +10,7 @@ export default function Page() {
   const yesButtonSize = noCount * 20 + 16;
 
   const waitingGifs = [
+    cutegif_01,
     "https://media.tenor.com/rPAM20SrLsAAAAAM/picoozi-cute-cat.gif",
     "https://media.tenor.com/mMdUSERZgGUAAAAM/kiss-love.gif",
     "https://media.tenor.com/UIOgr3Zw97sAAAAM/cute.gif",
