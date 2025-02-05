@@ -5,4 +5,17 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   base: "/valentine",
   plugins: [react()],
-});
+  build: {
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name.endsWith('.gif')) {
+            return 'assets/assets/[name]-[hash][extname]'
+          }
+          return 'assets/[name]-[hash][extname]'
+        }
+      }
+    }
+  }
+})
