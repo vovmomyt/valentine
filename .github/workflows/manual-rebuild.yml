@@ -28,6 +28,7 @@ jobs:
           
       - name: Install dependencies
         run: |
+          git checkout main
           npm install -g pnpm
           pnpm i
     
