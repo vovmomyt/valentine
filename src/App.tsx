@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import cutegif_01 from "./assets/CUTEGIF_01.gif";
 
+
 export default function Page() {
   const [noCount, setNoCount] = useState(0);
   const [yesPressed, setYesPressed] = useState(false);
@@ -139,3 +140,4 @@ export default function Page() {
     </div>
   );
 }
+
