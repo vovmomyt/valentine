@@ -14,10 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: Clean gh-pages branch
+      - name: Create and clean gh-pages branch
         if: ${{ github.event.inputs.clean_build == 'true' }}
         run: |
-          git checkout gh-pages
+          git checkout --orphan gh-pages || git checkout gh-pages
           git rm -rf .
           git clean -fdx
           
