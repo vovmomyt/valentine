@@ -1,0 +1,21 @@
+name: Telegram Notification Check
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'  # Каждые 4 часа
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Telegram Message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: |
+            🔔 Проверка статуса репозитория:
+            Репозиторий: ${{ github.repository }}
+            Последний коммит: ${{ github.sha }}
+            Статус: ✅ Активен
