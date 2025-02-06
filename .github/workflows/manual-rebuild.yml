@@ -26,13 +26,40 @@ jobs:
         with:
           node-version: '16'
           
-      - name: Build
+      - name: Install dependencies
         run: |
           npm ci
-          npm run build
-          
+          pnpm i
+    
+      - name: Building pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+          pnpm gh-pages -d dist -b gh-pages
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+
+
+      - name: Send Telegram notification
+        if: always()
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: |
+            🚀 Ручной деплой
+            Статус: ${{ job.status != 'success' && '❌ Ошибка во время деплоя' || '✅ Деплой успешен!' }}
+
+            Ветка: ${{ github.ref_name }} || https://github.com/${{ github.repository }}/tree/${{ github.ref_name }}
+            Ссылка на коммит: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+            Автор коммита: ${{ github.actor }}
+            Репозиторий: https://github.com/${{ github.repository }}
+            
+            Посмотреть: https://vovmomyt.github.io/valentine
