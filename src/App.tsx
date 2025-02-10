@@ -1,6 +1,18 @@
 "use client";
 import { useState, useEffect } from "react";
 import cutegif_01 from "./assets/CUTEGIF_01.gif";
+import cutegif_02 from "./assets/CUTEGIF_02.gif";
+import cutegif_03 from "./assets/CUTEGIF_03.gif";
+import cutegif_04 from "./assets/CUTEGIF_04.gif";
+import cutegif_05 from "./assets/CUTEGIF_05.gif";
+import cutegif_06 from "./assets/CUTEGIF_06.gif";
+import cutegif_07 from "./assets/CUTEGIF_07.gif";
+import cutegif_08 from "./assets/CUTEGIF_08.gif";
+import cutegif_09 from "./assets/CUTEGIF_09.gif";
+import cutegif_10 from "./assets/CUTEGIF_10.gif";
+import cutegif_11 from "./assets/CUTEGIF_11.gif";
+import cutegif_12 from "./assets/CUTEGIF_12.gif";
+
 
 
 export default function Page() {
@@ -12,6 +24,17 @@ export default function Page() {
 
   const waitingGifs = [
     cutegif_01,
+    cutegif_02,
+    cutegif_03,
+    cutegif_04,
+    cutegif_05,
+    cutegif_06,
+    cutegif_07,
+    cutegif_08,
+    cutegif_09,
+    cutegif_10,
+    cutegif_11,
+    cutegif_12,
     "https://media.tenor.com/rPAM20SrLsAAAAAM/picoozi-cute-cat.gif",
     "https://media.tenor.com/mMdUSERZgGUAAAAM/kiss-love.gif",
     "https://media.tenor.com/UIOgr3Zw97sAAAAM/cute.gif",
