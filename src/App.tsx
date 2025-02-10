@@ -14,6 +14,7 @@ import cutegif_11 from "./assets/CUTEGIF_11.gif";
 import cutegif_12 from "./assets/CUTEGIF_12.gif";
 
 
+
 export default function Page() {
   const [noCount, setNoCount] = useState(0);
   const [yesPressed, setYesPressed] = useState(false);
