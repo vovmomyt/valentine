@@ -142,7 +142,7 @@ export default function Page() {
             className="h-[200px]"
             src={waitingGifs[currentGifIndex]}
           />
-          <h1 className="my-4 text-4xl">Солнышко, ты примешь мою валентинку?</h1>
+          <h1 className="my-4 text-4xl">Солнышко, ты будешь моей валентинкой?</h1>
           <div className="flex items-center">
             <button
               className={`mr-4 rounded bg-green-500 px-4 py-2 font-bold text-white hover:bg-green-700`}
